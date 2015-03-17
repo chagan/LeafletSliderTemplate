@@ -1,4 +1,3 @@
-
 html, body {
   height: 100%;
   font-family: 'Roboto', sans-serif;
@@ -30,94 +29,11 @@ header {
   width:100%;
 }
 
-.info {
-	position:absolute;
-	width: 100%;
-	height:50px;
-	top: 0px;
-	left: 0px;
-    background: white;
-    background: rgba(255,255,255,0.8);
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    border-radius: 5px;
-}
-.leaflet-control {
-    max-width: 250px;
-}
-#legend-button-container {
-	float:right;
-	height: 18px;
-	width: 18px;
-	line-height:18px;
-	border: 1px solid #bbb;
-	-webkit-border-radius: 2px;
-	border-radius: 2px;
-	text-align: center;
-	text-decoration:none;
-	font: bold 18px 'Lucida Console', Arial, monospace;
-	cursor: pointer;
-}
-#legend-button-container.inactive {
-	border:0px;
-	padding-bottom:10px;
-}
-.my-legend .legend-title {
-    text-align: left;
-    margin-bottom: 5px;
-    font-weight: bold;
-    font-size: 90%;
-}
-.my-legend .legend-scale ul {
-    margin: 0;
-    margin-bottom: 5px;
-    padding: 0;
-    list-style: none;
-}
-.my-legend .legend-scale ul li {
-    font-size: 80%;
-    list-style: none;
-    margin-left: 0;
-    line-height: 18px;
-    margin-bottom: 2px;
-}
-.my-legend ul.legend-labels li span {
-    display: block;
-    float: left;
-    height: 16px;
-    width: 30px;
-    margin-right: 5px;
-    margin-left: 0;
-}
-.my-legend .legend-source {
-    font-size: 70%;
-    color: #999;
-    clear: both;    
-}
-.my-legend a {
-    color: #777;
-}
-.legend-subhead {
-    font-style:italic;
-}
-
+/* Main slider styles */
 .range {
   position:absolute;
   top:0px;
   margin:0px;
-}
-
-.divider {
-    width:4px;
-    margin-left: -2px;
-    height:99%;
-    position:absolute;
-    background-color:#e0e0e0;
-    top:6px;
-    cursor: col-resize;
-}
-
-p {
-    font-size: 12px;
 }
 
 input[type=range] {
@@ -147,9 +63,8 @@ input[type=range]::-webkit-slider-thumb {
 input[type=range]:focus {
     outline: none;
 }
-/* Firefox styles */
 
-
+/* Firefox slider styles */
 @-moz-document url-prefix() {
     input[type=range]{
         /*required for proper track sizing in FF*/
@@ -177,7 +92,6 @@ input[type=range]::-moz-range-thumb {
     padding:0px 17px;
 }
 
-/*hide the outline behind the border*/
 input[type=range]:-moz-focusring{
     outline: none;
     outline-offset: -1px;
@@ -192,7 +106,7 @@ input[type=range]::-moz-focus-outer {
     border: 0;
     }
 
-/* IE styles */
+/* IE slider styles */
 input[type=range]::-ms-track {
   width: 100%;
   height: 9000px;
@@ -213,11 +127,7 @@ input[type=range]::-ms-fill-lower {
 	background:transparent;
 }
 
-.col-sm-3 {
-    overflow:scroll;
-    height:100%;
-}
-
+/* Styles for text labels on slider */
 .year {
     position: absolute;
     top:5%;
@@ -230,6 +140,7 @@ input[type=range]::-ms-fill-lower {
     font-family: 'Roboto Condensed';
 }
 
+/* Styles for arrow labels on slider */
 .fa {
     position: absolute;
     top:45%;
@@ -239,6 +150,13 @@ input[type=range]::-ms-fill-lower {
     -webkit-text-shadow: 1px 1px 1px #fff;
     -moz-text-shadow:    1px 1px 1px #fff;
     text-shadow:         1px 1px 1px #fff;
+}
+
+/* END SLIDER STYLES */
+
+.col-sm-3 {
+    overflow:scroll;
+    height:100%;
 }
 
 h2 {
@@ -261,7 +179,8 @@ h2 {
 
 @media (min-width: 769px) {
   body {
-      padding-top:51px;
+      /* Padding top should be set to height of header */
+      padding-top:1.5em;
       -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
       -moz-box-sizing: border-box;    /* Firefox, other Gecko */
       box-sizing: border-box;         /* Opera/IE 8+ */

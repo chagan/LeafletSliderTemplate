@@ -4,10 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>WBEZ - Chicago Mayoral Election Results 2011-2015</title>
+    <title>WBEZ - Leaflet map slider template</title>
 
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="mayoral_map.css">
+    <link rel="stylesheet" type="text/css" href="leaflet-map-slider.css">
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Lora|Roboto+Condensed|Roboto' rel='stylesheet' type='text/css'>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -16,88 +17,31 @@
     <![endif]-->
 
     <!-- IT'S A TAG! -->
-    <meta property="og:title" content="WBEZ Chicago Mayoral Election Results 2011-2015" />
-    <meta property="og:site name" content="WBEZ 91.5 Chicago" />
-    <meta property="og:url" content="http://www.interactive.wbez.org/elections/2015/mayoral-dot-map" />
-    <meta property="og:type" content="website" />
-    <meta property="og:description" content="Looking at the Chicago Mayoral Election Results from 2011-2015 using one dot for every voter." />
+    <meta property="og:title" content="" />
+    <meta property="og:site name" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:description" content=""/>
 
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Lora|Roboto+Condensed|Roboto' rel='stylesheet' type='text/css'>
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.css' rel='stylesheet' />
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-
-    <script>
-      if (window.self === window.top) { 
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-369047-1', 'wbez.org');
-        ga('send', 'pageview');
-      }
-    </script>
   </head>
   <body>
     <header class="wbez-header">
-      <a href="http://wbez.org">
-        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="25" viewBox="0 0 673.5 181.6" enable-background="new 0 0 673.5 181.6" xml:space="preserve">
-        <g>
-         <path fill="#ED1C24" d="M439,128.4v7.9c0,10,3.4,14.7,11.3,14.7c7.9,0,12.3-4.7,12.3-14.7v-35.9c-6.8,6.8-11,10.2-21.7,10.2c-15.3,0-28-8.9-28-31.4V60.8c0-32.3,11-46.7,37.4-46.7c26.3,0,37.4,13.2,37.4,42v73.5 c0,28.9-11,42-37.4,42c-20.8,0.4-34.2-14.4-34.2-34v-9.3H439z M462.6,49.6c0-10-4.5-14.6-12.3-14.6c-7.9,0-12.3,4.7-12.3,14.6v25.5c0,10,4.5,14.6,11,14.6c4.7,0,10.4-4.5,13.6-7V49.6z"></path>
-          <path fill="#ED1C24" d="M519,48.1h-20.8V33.9c11.7-5.9,22.5-12.3,31.2-19.7h13.4v155.4H519V48.1z"></path>
-          <rect x="554.9" y="144.5" fill="#ED1C24" width="25.1" height="25.1"></rect>
-          <path fill="#ED1C24" d="M613.6,125.2v12.3c0,8.3,4.7,13.4,11.7,13.4c8.3,0,13-4.9,13-18.7V97.4c0-10-5.1-14-11-14c-8.1,0-11.9,5.3-14.2,11.7h-20.4c0.8-23.8,1.9-42.5,1.9-78.8h63.9l-0.8,21.7h-41.4L614.6,71l0.4,0.4c6.6-7.9,12.1-8.9,20.2-8.9c20.2,0,28,14.7,28,40.3v21.2c0,32.3-10.2,47.6-35.7,47.6c-21.2,0-37.8-9.3-37.8-34.8v-11.7H613.6z"></path>
-          <polygon fill="#FFFFFF" points="66.5,17.9 88,17.9 105.7,114.9 106.1,114.9 120.7,17.9 145.1,17.9 118.4,170.2 96.4,170.2 77.5,69.6 77,69.6 59.3,170.2 37.4,170.2 8.5,17.9 33,17.9 49,114.9 49.4,114.9"></polygon>
-          <path fill="#FFFFFF" d="M152.5,17.9h38.8c28,0,40.5,14.3,40.5,40.3c0,13.1-5.5,26.8-18.1,31.8c13.3,5.9,21.1,16.5,21.1,36.1c0,25.1-11.2,44.1-40.9,44.1h-41.3V17.9z M178.6,80.4h9.5c9.9,0,17.5-6.7,17.5-19.4 c0-14.1-5.5-21.5-17.1-21.5h-9.9V80.4z M178.6,148.7h11c13.9,0,19-8,19-23.4c0-15.6-5.9-23.4-21.5-23.4h-8.4V148.7z"></path>
-          <polygon fill="#FFFFFF" points="244.9,170.2 244.9,17.9 314.9,17.9 314.9,40.7 271.1,40.7 271.1,79.9 304.8,79.9 304.8,102.7 271.1,102.7 271.1,147.4 317.9,147.4 317.9,170.2"></polygon>
-          <polygon fill="#FFFFFF" points="330.6,40.7 330.6,17.9 399.7,17.9 399.7,42.8 351.6,147.4 399.7,147.4 399.7,170.2 324.7,170.2 324.7,145.3 373.4,40.7"></polygon>
-        </g>
-        </svg>
-      </a>
+
     </header>
   <div class="container-fluid">
     <div class="col-sm-4">
-        <h2>One dot for every voter<br><small>Chicago Mayoral Election Results 2011-2015</small></h2>
-        <p>There was a huge change in the support for Chicago Mayor Rahm Emanuel from his 2011 election to the 2015 primary, in which he was forced into a runoff with challenger Jesus "Chuy" Garcia.</p>
-        <p>These maps represent every voter in Chicago with a dot, colored by the candidate they voted for. It shows not only the <a href="http://www.wbez.org/news/chicago-mayor-rahm-emanuel-forced-april-runoff-election-111616">diminished support for Emanuel</a>, but the <a href="http://www.redeyechicago.com/news/redeye-official-low-voter-turnout-amid-cold-temperatures-20150224-story.html">drop in turnout</a> from 2011 to 2015.</p>
-        <p><a href="http://wbezdata.tumblr.com/post/86343915004/mapping-rahm-emanuels-2011-victory-and-how-that">See this post</a> for more information on how we made these maps.</p>
-        <div class="row">
-          
-          <div class="col-xs-6 col-sm-12">
-            <div class='my-legend'>
-                <div class='legend-title'>Chicago Mayoral Election Results 2011</div>
-                <div class='legend-scale'>
-                  <ul class='legend-labels'>
-                    <li><span style='background:#83f52c;'></span>Rahm Emanuel</li>
-                    <li><span style='background:#FF0009;'></span>All others</li>
-                  </ul>
-                </div>
-            </div>
-          </div>
-
-          <div class="col-xs-6 col-sm-12">
-            <div class='my-legend'>
-              <div class='legend-title'>Chicago Mayoral Election Results 2015</div>
-              <div class='legend-scale'>
-                <ul class='legend-labels'>
-                  <li><span style='background:#83f52c;'></span>Rahm Emanuel</li>
-                  <li><span style='background:#ff0099;'></span>Jesus 'Chuy' Garcia</li>
-                  <li><span style='background:#ff6600;'></span>Willie Wilson</li>
-                  <li><span style='background:#6e0dd0;'></span>Robert Fioretti</li>
-                  <li><span style='background:#f3f315;'></span>William Walls, III</li>
-                </ul>
-              </div>
-              <div class='legend-source'>Source: <a href="http://www.chicagoelections.com/wdlevel3.asp?elec_code=25">Board of Election Commissioners, City of Chicago</a></div>
-            </div>
-          </div>
-    
-      </div>
+        <h2>Map Headline</h2>
+        <p>Map text would go here. Explain all about your two maps.</p>
     </div>
     <div class="col-sm-8 fill">
       <div id='map'></div>
       <input id='range' class='range' type='range' min='0' max='1.0' step='any' />
+
+      <!-- Put your slider labels here -->
       <div class='year left'>2011</div><div class='year right'>2015</div>
       <i class="fa fa-caret-left"></i>
       <i class="fa fa-caret-right"></i>
@@ -110,48 +54,62 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
     <script>
+      // Initialize your map
       var map = L.mapbox.map('map').setView([41.878114,-87.629798], 11).addControl(L.mapbox.shareControl());
       map.options.maxZoom = 14; map.options.minZoom = 10;
       
+      // We use stamen tiles for out base layer, but you could sub in your favorite tileset here or just use the two map layers below if each is a full map
       var stamenUrl = 'http://{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png';
-            var stamenAttribution = 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.';
-            var stamenLayer = new L.TileLayer(stamenUrl, {maxZoom: 15, attribution: stamenAttribution});
+      var stamenAttribution = 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.';
+      var stamenLayer = new L.TileLayer(stamenUrl, {maxZoom: 15, attribution: stamenAttribution});
         
-        map.addLayer(stamenLayer)
+      map.addLayer(stamenLayer)
       
-      var tileLayer15 = L.tileLayer('https://s3.amazonaws.com/wbez-assets/maps/mayoral_2015/tiles_75/{z}/{x}/{y}.png',{minZoom:10}).addTo(map);
-      var tileLayer11 = L.tileLayer('https://s3.amazonaws.com/wbez-assets/maps/mayoral_2011/tiles_2011_75_rg/{z}/{x}/{y}.png',{minZoom:10}).addTo(map);
 
+      // Add your two tile layers here
+      var tileLayerRight = L.tileLayer('https://s3.amazonaws.com/wbez-assets/maps/mayoral_2015/tiles_75/{z}/{x}/{y}.png',{minZoom:10}).addTo(map);
+      var tileLayerLeft = L.tileLayer('https://s3.amazonaws.com/wbez-assets/maps/mayoral_2011/tiles_2011_75_rg/{z}/{x}/{y}.png',{minZoom:10}).addTo(map);
+
+      // Initialize the range
       var range = document.getElementById('range');
 
+      // Clip function crops the two map layers and handles positioning the markers
       function clip() {
         var nw = map.containerPointToLayerPoint([0, 0]),
             se = map.containerPointToLayerPoint(map.getSize()),
             clipX = nw.x + (se.x - nw.x) * range.value;
             // top right bottom left
 
+        // clip the layers. Include the base layer to get around a bug where the layers don't refresh on zoom
         stamenLayer.getContainer().style.clip = 'rect(' + [nw.y, se.x, se.y, nw.x].join('px,') + 'px)';
-        tileLayer11.getContainer().style.clip = 'rect(' + [nw.y, clipX, se.y, nw.x].join('px,') + 'px)';
-        tileLayer15.getContainer().style.clip = 'rect(' + [nw.y, se.x, se.y, clipX].join('px,') + 'px)';
+        tileLayerRight.getContainer().style.clip = 'rect(' + [nw.y, se.x, se.y, clipX].join('px,') + 'px)';
+        tileLayerLeft.getContainer().style.clip = 'rect(' + [nw.y, clipX, se.y, nw.x].join('px,') + 'px)';
 
+        // get size of the map container
         var w = $('.fill').width()*range.value;
+
+        // reset the arrows and markers
         $('.left').css('left',(w-$('.left').width())-20);
         $('.right').css('left',(w+20));
         $('.fa-caret-left').css('left',(w-$('.fa-caret-left').width()-6));
         $('.fa-caret-right').css('left',w+6);
-        console.log(range.value, w);
       }
 
       range['oninput' in range ? 'oninput' : 'onchange'] = clip;
       map.on('move', clip);
+      
+      // Get around a bug where the layers don't refresh on zoom
       map.on('viewreset',function(){
         console.log('reset');
         $('.leaflet-layer').attr('style','clip: rect(0px 0px 0px 0px);');
       })
-      tileLayer11.on('load',function(){
+
+      // Make sure the clip happens after the second layers finishes loading
+      tileLayerLeft.on('load',function(){
         clip();
       })
       
+      // Refresh map when the page size changes
       $( window ).resize(function() {
         clip();
       });
