@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>WBEZ - Leaflet map slider template</title>
+    <title>Leaflet map slider template</title>
 
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="leaflet-map-slider.css">
@@ -25,11 +25,10 @@
 
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Lora|Roboto+Condensed|Roboto' rel='stylesheet' type='text/css'>
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.css' rel='stylesheet' />
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
   </head>
   <body>
-    <header class="wbez-header">
+    <header class="header">
 
     </header>
   <div class="container-fluid">
@@ -42,7 +41,7 @@
       <input id='range' class='range' type='range' min='0' max='1.0' step='any' />
 
       <!-- Put your slider labels here -->
-      <div class='year left'>2011</div><div class='year right'>2015</div>
+      <div class='year left'>Left Label</div><div class='year right'>Right Label</div>
       <i class="fa fa-caret-left"></i>
       <i class="fa fa-caret-right"></i>
     </div>
@@ -52,10 +51,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
     <script>
-      // Initialize your map
-      var map = L.mapbox.map('map').setView([41.878114,-87.629798], 11).addControl(L.mapbox.shareControl());
+      // Initialize the map
+      var map = L.map('map').setView([41.878114,-87.629798], 11);
       map.options.maxZoom = 14; map.options.minZoom = 10;
       
       // We use stamen tiles for out base layer, but you could sub in your favorite tileset here or just use the two map layers below if each is a full map
@@ -109,7 +108,7 @@
         clip();
       })
       
-      // Refresh map when the page size changes
+      // Refreshes the map when the page size changes
       $( window ).resize(function() {
         clip();
       });
